@@ -10,4 +10,4 @@ As the compilation process is rather simple, I didn't create any Makefile. Pleas
 * On Windows : `gcc -o mandelbrot mandelbrot.c -lmingw32 -lSDL2Main -lSDL2`
 * On Nux : `gcc -o mandelbrot mandelbrot.c -lSDL2`
 
-![Alt text](screenshot.PNG)
+![Alt text](screenshot.png)
