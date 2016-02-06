@@ -2,8 +2,8 @@
 // Contact : http://geographer.fr
 //           geographer@geographer.fr
 
-// Windows : gcc -o mandelbrot mandelbrot.c -lmingw32 -lSDL2Main -lSDL2
-// Nux : gcc -o mandelbrot mandelbrot.c -lSDL2
+// Windows : gcc -o mandelbrot.exe mandelbrot.c -lmingw32 -lSDL2Main -lSDL2
+// Nux : gcc -o mandelbrot.out mandelbrot.c -lSDL2
 
 // This has to be a square
 #define WINDOW_HEIGHT 600
