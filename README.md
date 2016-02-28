@@ -7,7 +7,7 @@ Requirements :
 * Possibly MinGW if running Windows
 
 As the compilation process is rather simple, I didn't create any Makefile. Please, use :
-* On Windows : `gcc -o mandelbrot mandelbrot.c -lmingw32 -lSDL2Main -lSDL2`
-* On Nux : `gcc -o mandelbrot mandelbrot.c -lSDL2`
+* On Windows : `gcc -o mandelbrot.exe mandelbrot.c -lmingw32 -lSDL2Main -lSDL2`
+* On Nux : `gcc -o mandelbrot.out mandelbrot.c -lSDL2`
 
 ![Alt text](screenshot.png)

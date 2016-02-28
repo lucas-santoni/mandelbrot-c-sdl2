@@ -58,6 +58,9 @@ void draw_mandelbrot(Sdl *sdl, Fractal *fractal) {
 				SDL_SetRenderDrawColor(sdl->renderer, 0, 0, i * (255 / fractal->iMax), 255);
 				SDL_RenderDrawPoint(sdl->renderer, x, y);
 			}
+
+			// Render using SDL_RenderDrawPoint() is slow and should
+			// be replaced by SDL_RenderDrawPoints()
 		}
 	}
 }
@@ -105,10 +108,18 @@ void is_user_moving(Sdl *sdl, Fractal *fractal) {
 
 void print_verbose(Fractal *fractal) {
 	// Print some variables on console
-	system("cls");
+	
+	// We need to know the OS
+	// In order to run the right command
+	// This is slow and need to be removed
+	#ifdef __unix__
+		system("clear");
+	#elif defined(_WIN32) || defined(_WIN64) 
+		system("cls");
+	#endif
+
 	printf("=== CONSOLE ===\n");
 	printf("------------------------\n");
-	printf("\n");
 	printf("- x position :\t%f\n", fractal->xMove);
 	printf("- y position :\t%f\n", fractal->yMove);
 	printf("- zoom :\t%f\n", fractal->zoom);
