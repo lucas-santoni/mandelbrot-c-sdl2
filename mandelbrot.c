@@ -27,13 +27,15 @@ int main(int argc, char **argv) {
 	Sdl *sdl = init_sdl();
 	Fractal *fractal = init_fractal();
 
+	// Init console
+	print_verbose(fractal);
+
 	// User can exit program using escape
 	while (is_user_pressing_escape(sdl) == 0) {
 		draw_mandelbrot(sdl, fractal);
 		is_user_moving(sdl, fractal);
 
 		SDL_RenderPresent(sdl->renderer);
-		print_verbose(fractal);
 
 		SDL_Delay(10);
 	}

@@ -65,6 +65,23 @@ void draw_mandelbrot(Sdl *sdl, Fractal *fractal) {
 	}
 }
 
+void print_verbose(Fractal *fractal) {
+	// Print some variables on console
+	
+	// We need to know the OS
+	// In order to run the right command
+	#ifdef __unix__
+		system("clear");
+	#elif defined(_WIN32) || defined(_WIN64) 
+		system("cls");
+	#endif
+
+	printf(" ~ x position :\t%f\n", fractal->xMove);
+	printf(" ~ y position :\t%f\n", fractal->yMove);
+	printf(" ~ zoom :\t%f\n", fractal->zoom);
+	printf(" ~ iterations :\t%f\n", fractal->iMax);
+}
+
 void is_user_moving(Sdl *sdl, Fractal *fractal) {
 	SDL_PollEvent(&sdl->event);
 
@@ -79,49 +96,35 @@ void is_user_moving(Sdl *sdl, Fractal *fractal) {
 	if (sdl->keys[SDL_SCANCODE_LEFT]) {
 		fractal->xMove = fractal->xMove + (moveStep / fractal->zoom * delta);
 		draw_cross(sdl);
+		print_verbose(fractal);
 	}
 	else if (sdl->keys[SDL_SCANCODE_RIGHT]) {
 		fractal->xMove = fractal->xMove - (moveStep / fractal->zoom * delta);
 		draw_cross(sdl);
+		print_verbose(fractal);
 	}
 	else if (sdl->keys[SDL_SCANCODE_UP]) {
 		fractal->yMove = fractal->yMove + (moveStep / fractal->zoom * delta);
 		draw_cross(sdl);
+		print_verbose(fractal);
 	}
 	else if (sdl->keys[SDL_SCANCODE_DOWN]) {
 		fractal->yMove = fractal->yMove - (moveStep / fractal->zoom * delta);
 		draw_cross(sdl);
+		print_verbose(fractal);
 	}
 	
 	else if (sdl->keys[SDL_SCANCODE_KP_PLUS]) {
 		fractal->zoom = fractal->zoom + (moveStep * fractal->zoom * delta);
 		fractal->iMax = fractal->iMax + zoomStep * delta;
 		draw_cross(sdl);
+		print_verbose(fractal);
 	}
 	// User is not allowed to zoom back past 0.3
 	else if (sdl->keys[SDL_SCANCODE_KP_MINUS] && (fractal->zoom - (moveStep * fractal->zoom * delta)) > 0.3) {
 		fractal->zoom = fractal->zoom - (moveStep * fractal->zoom * delta);
 		fractal->iMax = fractal->iMax - zoomStep * delta;
 		draw_cross(sdl);
+		print_verbose(fractal);
 	}
-}
-
-void print_verbose(Fractal *fractal) {
-	// Print some variables on console
-	
-	// We need to know the OS
-	// In order to run the right command
-	// This is slow and need to be removed
-	#ifdef __unix__
-		system("clear");
-	#elif defined(_WIN32) || defined(_WIN64) 
-		system("cls");
-	#endif
-
-	printf("=== CONSOLE ===\n");
-	printf("------------------------\n");
-	printf("- x position :\t%f\n", fractal->xMove);
-	printf("- y position :\t%f\n", fractal->yMove);
-	printf("- zoom :\t%f\n", fractal->zoom);
-	printf("- iterations :\t%f\n", fractal->iMax);
 }
