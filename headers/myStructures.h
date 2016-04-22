@@ -1,3 +1,14 @@
+#ifndef MYSTRUCTURES_H_
+#define MYSTRUCTURES_H_
+
+#include <SDL2/SDL.h>
+
+// This has to be a square
+#define WINDOW_HEIGHT 600
+#define WINDOW_WIDTH  600
+
+#define WINDOW_TITLE "Mandelbrot Fractal // Geographer"
+
 typedef struct Sdl {
 	SDL_Window *window;
 	SDL_Renderer *renderer;
@@ -24,7 +35,7 @@ void free_everything(Sdl *sdl, Fractal *fractal) {
 	SDL_DestroyRenderer(sdl->renderer);
 	SDL_DestroyWindow(sdl->window);
 	free(sdl);
-	
+
 	free(fractal);
 
 	SDL_Quit();
@@ -32,3 +43,5 @@ void free_everything(Sdl *sdl, Fractal *fractal) {
 	// You may observe memory leaks using this program
 	// SDL2 leaks by itself
 }
+
+#endif

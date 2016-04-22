@@ -1,3 +1,12 @@
+#ifndef MYFRACTAL_H_
+#define MYFRACTAL_H_
+
+#include <stdlib.h>
+#include <SDL2/SDL.h>
+
+#include "myStructures.h"
+#include "mySDL.h"
+
 Fractal *init_fractal() {
 	Fractal *fractal = malloc(sizeof(Fractal));
 
@@ -67,12 +76,12 @@ void draw_mandelbrot(Sdl *sdl, Fractal *fractal) {
 
 void print_verbose(Fractal *fractal) {
 	// Print some variables on console
-	
+
 	// We need to know the OS
 	// In order to run the right command
 	#ifdef __unix__
 		system("clear");
-	#elif defined(_WIN32) || defined(_WIN64) 
+	#elif defined(_WIN32) || defined(_WIN64)
 		system("cls");
 	#endif
 
@@ -87,7 +96,7 @@ void is_user_moving(Sdl *sdl, Fractal *fractal) {
 
 	// Delta time to sync everything
 	float delta = 0.30;
-	
+
 	// Movement speed
 	float moveStep = 0.5;
 	float zoomStep = 3.0;
@@ -113,7 +122,7 @@ void is_user_moving(Sdl *sdl, Fractal *fractal) {
 		draw_cross(sdl);
 		print_verbose(fractal);
 	}
-	
+
 	else if (sdl->keys[SDL_SCANCODE_KP_PLUS]) {
 		fractal->zoom = fractal->zoom + (moveStep * fractal->zoom * delta);
 		fractal->iMax = fractal->iMax + zoomStep * delta;
@@ -128,3 +137,5 @@ void is_user_moving(Sdl *sdl, Fractal *fractal) {
 		print_verbose(fractal);
 	}
 }
+
+#endif
