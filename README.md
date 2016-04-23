@@ -21,3 +21,5 @@ Please, use :
 *   Nux : `gcc -o mandelbrot.out mandelbrot.c -lSDL2`
 
 ![screenshot](screenshot.png)
+
+Happy fractal !
