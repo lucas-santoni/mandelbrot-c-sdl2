@@ -79,7 +79,7 @@ void print_verbose(Fractal *fractal) {
 
 	// We need to know the OS
 	// In order to run the right command
-	#ifdef __unix__
+	/* #ifdef __unix__
 		system("clear");
 	#elif defined(_WIN32) || defined(_WIN64)
 		system("cls");
@@ -88,7 +88,7 @@ void print_verbose(Fractal *fractal) {
 	printf(" ~ x position :\t%f\n", fractal->xMove);
 	printf(" ~ y position :\t%f\n", fractal->yMove);
 	printf(" ~ zoom :\t%f\n", fractal->zoom);
-	printf(" ~ iterations :\t%f\n", fractal->iMax);
+	printf(" ~ iterations :\t%f\n", fractal->iMax); */
 }
 
 void is_user_moving(Sdl *sdl, Fractal *fractal) {
