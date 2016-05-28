@@ -7,7 +7,7 @@
 #define WINDOW_HEIGHT 600
 #define WINDOW_WIDTH  600
 
-#define WINDOW_TITLE "Mandelbrot Fractal // Geographer"
+#define WINDOW_TITLE "Mandelbrot Fractal, by Geographer"
 
 typedef struct Sdl {
 	SDL_Window *window;
