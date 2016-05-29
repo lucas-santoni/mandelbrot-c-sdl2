@@ -17,23 +17,23 @@
 // Doesn't matter on Nux
 int main(int argc, char **argv) {
 
-	// Init the structures
-	Sdl *sdl = init_sdl();
-	Fractal *fractal = init_fractal();
+  // Init the structures
+  Sdl *sdl = init_sdl();
+  Fractal *fractal = init_fractal();
 
-	// Init console
-	print_verbose(fractal);
+  // Init console
+  print_verbose(fractal);
 
-	// User can exit program using escape
-	while (is_user_pressing_escape(sdl) == 0) {
-		draw_mandelbrot(sdl, fractal);
-		is_user_moving(sdl, fractal);
+  // User can exit program using escape
+  while (is_user_pressing_escape(sdl) == 0) {
+    draw_mandelbrot(sdl, fractal);
+    is_user_moving(sdl, fractal);
 
-		SDL_RenderPresent(sdl->renderer);
+    SDL_RenderPresent(sdl->renderer);
 
-		SDL_Delay(10);
-	}
+    SDL_Delay(10);
+  }
 
-	free_everything(sdl, fractal);
-	return 0;
+  free_everything(sdl, fractal);
+  return 0;
 }
