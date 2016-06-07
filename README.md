@@ -2,19 +2,19 @@
 
 Using the C language and the SDL2 library to draw the Mandelbrot set.
 
-Features :
+## Features
 
 * Use the *arrow keys* to move
 * Use the *+ key* to zoom in
 * Use the *- key* to zoom out
 
-Requirements :
+## Requirements
 
 * C standard library with (G)CC
 * SDL2 library
 * MinGW32 if running Windows
 
-To compile please use :
+## Compilation
 
 * Windows : `$ make mandelbrot.exe`
 * *nix : `$ make mandelbrot.out`
