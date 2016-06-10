@@ -21,6 +21,6 @@ Using the C language and the SDL2 library to draw the Mandelbrot set.
 
 Then run the program and enjoy ! :-)
 
-![screenshot](screenshot.png)
+![screenshot](screenshot.png "This is beautiful...")
 
 Happy fractal !
