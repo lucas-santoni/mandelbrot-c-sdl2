@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <SDL2/SDL.h>
 
-#include "myStructures.h"
 #include "mySDL.h"
 
 Fractal *init_fractal() {

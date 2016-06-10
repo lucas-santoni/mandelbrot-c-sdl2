@@ -2,7 +2,6 @@
 #define MYSTRUCTURES_H_
 
 #include <SDL2/SDL.h>
-#include <myFractal.h>
 
 // This has to be a square
 #define WINDOW_HEIGHT 600
