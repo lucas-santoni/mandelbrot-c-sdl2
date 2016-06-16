@@ -3,10 +3,6 @@
 #ifndef HEADERS_MYSDL_H_
 #define HEADERS_MYSDL_H_
 
-#include <SDL2/SDL.h>
-
-#include "myStructures.h"
-
 Sdl *init_sdl() {
   Sdl *sdl = malloc(sizeof(Sdl));
 
