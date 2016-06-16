@@ -13,7 +13,6 @@
 // Any other main prototype will bug MinGW's SDL2
 // Doesn't matter on *nix
 int main(int argc, char **argv) {
-
   // Init the structures
   Sdl *sdl = init_sdl();
   Fractal *fractal = init_fractal();
