@@ -1,5 +1,7 @@
-#ifndef MYSDL_H_
-#define MYSDL_H_
+// This file has no copyright.
+
+#ifndef HEADERS_MYSDL_H_
+#define HEADERS_MYSDL_H_
 
 #include <SDL2/SDL.h>
 
@@ -38,8 +40,10 @@ void draw_cross(Sdl *sdl) {
   int length = 15;
   SDL_SetRenderDrawColor(sdl->renderer, 255, 255, 255, 255);
 
-  SDL_RenderDrawLine(sdl->renderer, WINDOW_WIDTH / 2 - length / 2, WINDOW_HEIGHT / 2, WINDOW_WIDTH / 2 + length / 2, WINDOW_HEIGHT / 2);
-  SDL_RenderDrawLine(sdl->renderer, WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2 - length / 2, WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2 + length / 2);
+  SDL_RenderDrawLine(sdl->renderer, WINDOW_WIDTH / 2 - length / 2,
+    WINDOW_HEIGHT / 2, WINDOW_WIDTH / 2 + length / 2, WINDOW_HEIGHT / 2);
+  SDL_RenderDrawLine(sdl->renderer, WINDOW_WIDTH / 2, WINDOW_HEIGHT
+    / 2 - length / 2, WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2 + length / 2);
 }
 
-#endif
+#endif  // HEADERS_MYSDL_H_

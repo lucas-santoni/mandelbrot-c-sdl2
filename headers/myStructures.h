@@ -1,5 +1,7 @@
-#ifndef MYSTRUCTURES_H_
-#define MYSTRUCTURES_H_
+// This file has no copyright.
+
+#ifndef HEADERS_MYSTRUCTURES_H_
+#define HEADERS_MYSTRUCTURES_H_
 
 #include <SDL2/SDL.h>
 
@@ -44,4 +46,4 @@ void free_everything(Sdl *sdl, Fractal *fractal) {
   // SDL2 leaks by itself
 }
 
-#endif
+#endif  // HEADERS_MYSTRUCTURES_H_

@@ -1,5 +1,7 @@
-#ifndef MYFRACTAL_H_
-#define MYFRACTAL_H_
+// This file has no copyright.
+
+#ifndef HEADERS_MYFRACTAL_H_
+#define HEADERS_MYFRACTAL_H_
 
 #include <stdlib.h>
 #include <SDL2/SDL.h>
@@ -40,7 +42,8 @@ void draw_mandelbrot(Sdl *sdl, Fractal *fractal) {
     c.r = ((x - xFrame / 2) / (0.5 * xFrame * fractal->zoom)) - fractal->xMove;
 
     for (y = 0; y < yFrame; y++) {
-      c.i = ((y - yFrame / 2) / (0.5 * yFrame * fractal->zoom)) - fractal->yMove;
+      c.i = ((y - yFrame / 2) /
+        (0.5 * yFrame * fractal->zoom)) - fractal->yMove;
 
       z.r = 0;
       z.i = 0;
@@ -60,10 +63,10 @@ void draw_mandelbrot(Sdl *sdl, Fractal *fractal) {
         // In the set
         SDL_SetRenderDrawColor(sdl->renderer, 0, 0, 255, 255);
         SDL_RenderDrawPoint(sdl->renderer, x, y);
-      }
-      else {
+      } else {
         // Not in the set
-        SDL_SetRenderDrawColor(sdl->renderer, 0, 0, i * (255 / fractal->iMax), 255);
+        SDL_SetRenderDrawColor(sdl->renderer, 0, 0, i * (255 / fractal->iMax),
+          255);
         SDL_RenderDrawPoint(sdl->renderer, x, y);
       }
 
@@ -105,31 +108,26 @@ void is_user_moving(Sdl *sdl, Fractal *fractal) {
     fractal->xMove = fractal->xMove + (moveStep / fractal->zoom * delta);
     draw_cross(sdl);
     print_verbose(fractal);
-  }
-  else if (sdl->keys[SDL_SCANCODE_RIGHT]) {
+  } else if (sdl->keys[SDL_SCANCODE_RIGHT]) {
     fractal->xMove = fractal->xMove - (moveStep / fractal->zoom * delta);
     draw_cross(sdl);
     print_verbose(fractal);
-  }
-  else if (sdl->keys[SDL_SCANCODE_UP]) {
+  } else if (sdl->keys[SDL_SCANCODE_UP]) {
     fractal->yMove = fractal->yMove + (moveStep / fractal->zoom * delta);
     draw_cross(sdl);
     print_verbose(fractal);
-  }
-  else if (sdl->keys[SDL_SCANCODE_DOWN]) {
+  } else if (sdl->keys[SDL_SCANCODE_DOWN]) {
     fractal->yMove = fractal->yMove - (moveStep / fractal->zoom * delta);
     draw_cross(sdl);
     print_verbose(fractal);
-  }
-
-  else if (sdl->keys[SDL_SCANCODE_KP_PLUS]) {
+  } else if (sdl->keys[SDL_SCANCODE_KP_PLUS]) {
     fractal->zoom = fractal->zoom + (moveStep * fractal->zoom * delta);
     fractal->iMax = fractal->iMax + zoomStep * delta;
     draw_cross(sdl);
     print_verbose(fractal);
-  }
-  // User is not allowed to zoom back past 0.3
-  else if (sdl->keys[SDL_SCANCODE_KP_MINUS] && (fractal->zoom - (moveStep * fractal->zoom * delta)) > 0.3) {
+  } else if (sdl->keys[SDL_SCANCODE_KP_MINUS]
+    // User is not allowed to zoom back past 0.3
+    && (fractal->zoom - (moveStep * fractal->zoom * delta)) > 0.3) {
     fractal->zoom = fractal->zoom - (moveStep * fractal->zoom * delta);
     fractal->iMax = fractal->iMax - zoomStep * delta;
     draw_cross(sdl);
@@ -137,4 +135,4 @@ void is_user_moving(Sdl *sdl, Fractal *fractal) {
   }
 }
 
-#endif
+#endif  // HEADERS_MYFRACTAL_H_
