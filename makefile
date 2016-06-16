@@ -1,10 +1,16 @@
+MAKEFLAGS += --silent
+MAKEFLAGS += --ignore-errors
+
 all:
-	@echo "Please, tell me for which platform you want to compile ! :-)"
-	@echo "  * GNU/Linux : make mandelbrot.out"
-	@echo "  * Windows : make mandelbrot.exe (requires MinGW32)"
-
-mandelbrot.out:
+	@echo "Let's make this !"
 	gcc mandelbrot.c -lSDL2 -o mandelbrot.out
+	@echo "If no errors appeared, just ./mandelbrot ! Enjoy mandelbrot ! ;-)"
 
-mandelbrot.exe:
-	gcc mandelbrot.c -lmingw32 -lSDL2Main -lSDL2 -o mandelbrot.exe
+clean:
+	rm -f mandelbrot
+
+help:
+	@echo "Juste use make (without any argument) to compile."
+	@echo "Use make clean in order to delete mandelbrot."
+	@echo "If you have errors during compilation, you can contact me for help."
+	@echo "Windows users, you can use MinGW with this project."
