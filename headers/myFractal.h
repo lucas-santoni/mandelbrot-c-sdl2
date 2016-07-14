@@ -3,6 +3,12 @@
 #ifndef HEADERS_MYFRACTAL_H_
 #define HEADERS_MYFRACTAL_H_
 
+#include <stdlib.h>
+#include <SDL2/SDL.h>
+
+#include "myStructures.h"
+#include "mySDL.h"
+
 Fractal *init_fractal() {
   Fractal *fractal = malloc(sizeof(Fractal));
 

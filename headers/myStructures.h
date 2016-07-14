@@ -3,6 +3,8 @@
 #ifndef HEADERS_MYSTRUCTURES_H_
 #define HEADERS_MYSTRUCTURES_H_
 
+#include <SDL2/SDL.h>
+
 // This has to be a square
 #define WINDOW_HEIGHT 600
 #define WINDOW_WIDTH  600
