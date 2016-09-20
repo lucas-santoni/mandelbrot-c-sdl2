@@ -3,11 +3,17 @@
 #ifndef HEADERS_MYFRACTAL_H_
 #define HEADERS_MYFRACTAL_H_
 
+<<<<<<< HEAD
+#include <SDL2/SDL.h>
+
+#include "myStructures.h"
+=======
 #include <stdlib.h>
 #include <SDL2/SDL.h>
 
 #include "myStructures.h"
 #include "mySDL.h"
+>>>>>>> master
 
 Fractal *init_fractal() {
   Fractal *fractal = malloc(sizeof(Fractal));
@@ -21,7 +27,7 @@ Fractal *init_fractal() {
   fractal->iMax = 60;
 
   return fractal;
-}
+} 
 
 void draw_mandelbrot(Sdl *sdl, Fractal *fractal) {
   int i;
