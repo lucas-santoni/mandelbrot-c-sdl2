@@ -2,6 +2,9 @@
 // Contact : http://geographer.fr
 //           geographer@geographer.fr
 
+#include <SDL2/SDL.h>
+#include "headers/mySDL.h"
+#include "headers/myStructures.h"
 #include "headers/myFractal.h"
 
 // Any other main prototype will bug MinGW's SDL2
